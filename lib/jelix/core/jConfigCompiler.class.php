@@ -147,7 +147,7 @@ class jConfigCompiler
                 throw new Exception('Error while writing configuration cache file -- '.$filename);
             }
         } else {
-            \Jelix\IniFile\Util::write(get_object_vars($config), $filename.'.resultini.php', ";<?php die('');?>\n", $config->chmodFile);
+            \Jelix\IniFile\Util::write(get_object_vars($config), $filename, ";<?php die('');?>\n", $config->chmodFile);
         }
 
         return $config;

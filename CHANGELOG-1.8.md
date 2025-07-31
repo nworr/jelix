@@ -4,6 +4,8 @@ Changes into Jelix 1.8
 Next
 ----
 
+- fix the cache filename of configuration in the case where opcache is disabled
+
 1.8.18
 ------
 
