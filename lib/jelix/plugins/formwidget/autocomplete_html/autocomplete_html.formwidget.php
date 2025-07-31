@@ -5,7 +5,7 @@
  * @subpackage  forms_widget_plugin
  *
  * @author    Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2025 Laurent Jouanneau
  *
  * @see      https://jelix.org
  *
@@ -21,8 +21,7 @@
  * If the select box may contain hundred values, prefer to use the autocompleteajax_html widget.
  *
  * The widget accepts a specific attribute, 'attr-autocomplete', an array
- * which should contains at least an item 'source' indicating the url of the search
- * engine. The array may contains other attributes for the input element used to
+ * which may contain attributes for the input element used to
  * type the search term (class, style..).
  *
  * example of use:
@@ -132,7 +131,7 @@ class autocomplete_htmlFormWidget extends \jelix\forms\HtmlWidget\WidgetBase
                <input type="text" ';
         $this->_outputAttr($attrAutoComplete);
         echo '> <span class="autocomplete-no-search-results" style="display:none">'.jLocale::get('jelix~jforms.autocomplete.no.results').'</span> 
-                <button class="autocomplete-trash btn btn-mini" title="'.jLocale::get('jelix~ui.buttons.erase').'" type="button"><i class="icon-trash"></i></button> 
+                <button class="autocomplete-trash btn btn-mini" title="'.jLocale::get('jelix~ui.buttons.erase').'" type="button"><i class="ui-icon ui-icon-trash icon-trash"></i></button> 
             ';
         $this->displaySelectChoices($attrSelect, $value, $emptyLabel);
         echo "</div>\n";
