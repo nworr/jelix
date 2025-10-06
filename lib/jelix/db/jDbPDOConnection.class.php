@@ -108,7 +108,12 @@ class jDbPDOConnection extends PDO
         // we use mysql with the attribute MYSQL_ATTR_USE_BUFFERED_QUERY
         // TODO check if PHP 5.3 or higher fixes this issue
         if ($this->dbms == 'mysql') {
-            $this->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
+            if (class_exists('Pdo\Mysql', false)) {
+                $this->setAttribute(Pdo\Mysql::ATTR_USE_BUFFERED_QUERY, true);
+            }
+            else { // PHP < 8.4
+                $this->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
+            }
         }
 
         // Oracle returns names of columns in upper case by default. so here

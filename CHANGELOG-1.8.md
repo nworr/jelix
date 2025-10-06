@@ -10,6 +10,7 @@ Next
 - Remove warning for php 8.4 about `E_STRICT` (contribution of Joel Kociolek)
 - Fix PhpMailer version: 6.11 has unexpected breaking changes
 - Fix a notice into jImageModifier
+- Fix deprecation notice into jDbPDOConnection and tests for PHP 8.5
 
 1.8.19
 ------
