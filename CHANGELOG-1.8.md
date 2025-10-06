@@ -4,6 +4,13 @@ Changes into Jelix 1.8
 Next
 ----
 
+1.8.20
+------
+
+- Remove warning for php 8.4 about `E_STRICT` (contribution of Joel Kociolek)
+- Fix PhpMailer version: 6.11 has unexpected breaking changes
+- Fix a notice into jImageModifier
+
 1.8.19
 ------
 
