@@ -308,7 +308,7 @@ abstract class jRequest
                 $ip = trim($ip);
                 if (preg_match('/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/', $ip, $m)) {
                     if ($m[1] == '10' || $m[1] == '010'
-                        || ($m[1] == '172' && (intval($m[2]) & 240 == 16))
+                        || ($m[1] == '172' && ((intval($m[2]) & 240) == 16))
                         || ($m[1] == '192' && $m[2] == '168')) {
                         break;
                     } // stop at first private address. we just want the last public address
