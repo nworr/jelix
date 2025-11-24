@@ -10,10 +10,10 @@
  * @copyright  2008 Thomas
  * @copyright  2008 Julien Issler, 2009 Yannick Le Guédart
  * @copyright  2013 Philippe Villiers
- * This classes was get originally from the Copix project (CopixDAOSearchConditions, Copix 2.3dev20050901, http://www.copix.org)
+ * This class was got originally from the Copix project (CopixDAOSearchConditions, Copix 2.3dev20050901, http://www.copix.org)
  * Some lines of code are copyrighted 2001-2005 CopixTeam (LGPL licence).
- * Initial authors of this Copix classes are Gerald Croes and Laurent Jouanneau,
- * and this classes was adapted for Jelix by Laurent Jouanneau
+ * Initial authors of this Copix class are Gerald Croes and Laurent Jouanneau,
+ * and this class was adapted for Jelix by Laurent Jouanneau
  *
  * @see     http://jelix.org
  * @licence  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public Licence, see LICENCE file

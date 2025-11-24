@@ -9,9 +9,9 @@
  * @copyright  2001-2005 CopixTeam, 2005-2025 Laurent Jouanneau, 2007 Frédéric Guillot, 2007 Antoine Detante
  * @copyright  2007-2008 Julien Issler, 2008 Dominique Papin, 2010 NEOV, 2010 BP2I
  *
- * This classes were get originally from an experimental branch of the Copix project (Copix 2.3dev, http://www.copix.org)
+ * This class was got originally from an experimental branch of the Copix project (Copix 2.3dev, http://www.copix.org)
  * Few lines of code are still copyrighted 2001-2005 CopixTeam (LGPL licence).
- * Initial author of this Copix classes is Laurent Jouanneau, and this classes were adapted for Jelix by him
+ * The initial author of this Copix class is Laurent Jouanneau, and this class was adapted for Jelix by him
  * @licence  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public Licence, see LICENCE file
  */
 require JELIX_LIB_PATH.'auth/jIAuthDriver.iface.php';
