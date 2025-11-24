@@ -6,7 +6,7 @@
  * @author     Laurent Jouanneau
  * @contributor Frédéric Guillot, Antoine Detante, Julien Issler, Dominique Papin, Tahina Ramaroson, Sylvain de Vathaire, Vincent Viaud
  *
- * @copyright  2001-2005 CopixTeam, 2005-2020 Laurent Jouanneau, 2007 Frédéric Guillot, 2007 Antoine Detante
+ * @copyright  2001-2005 CopixTeam, 2005-2025 Laurent Jouanneau, 2007 Frédéric Guillot, 2007 Antoine Detante
  * @copyright  2007-2008 Julien Issler, 2008 Dominique Papin, 2010 NEOV, 2010 BP2I
  *
  * This classes were get originally from an experimental branch of the Copix project (Copix 2.3dev, http://www.copix.org)
@@ -606,7 +606,9 @@ class jAuth
 
         if (isset($config['persistant_enable']) && $config['persistant_enable']) {
             if (isset($config['persistant_cookie_name'])) {
-                setcookie($config['persistant_cookie_name'], '', time() - 3600, $config['persistant_cookie_path'], '', false, true);
+                if (jServer::isHttpsFromServer()) {
+                    setcookie($config['persistant_cookie_name'], '', time() - 3600, $config['persistant_cookie_path'], '', true, true);
+                }
             } else {
                 jLog::log(jLocale::get('jelix~auth.error.persistant.incorrectconfig', 'persistant_cookie_name'), 'error');
             }
@@ -792,7 +794,9 @@ class jAuth
             try {
                 $cryptokey = \Defuse\Crypto\Key::loadFromAsciiSafeString($config['persistant_encryption_key']);
                 $encrypted = \Defuse\Crypto\Crypto::encrypt(json_encode(array($login, $password)), $cryptokey);
-                setcookie($config['persistant_cookie_name'], $encrypted, $persistence, $config['persistant_cookie_path'], '', false, true);
+                if (\jServer::isHttpsFromServer()) {
+                    setcookie($config['persistant_cookie_name'], $encrypted, $persistence, $config['persistant_cookie_path'], '', true, true);
+                }
             } catch (\Defuse\Crypto\Exception\CryptoException $e) {
                 jLog::log('Cookie for persistant authentication. Error during encryption of the cookie token for authentication', 'warning');
                 jLog::logEx($e, 'warning');

@@ -10,6 +10,7 @@ Next
 
 - Fix security issue with PHP session: session id must be changed after authentication
   to avoid session fixation attacks
+- Fix security issue with the cookie for persistance: allow it only on https connections.
 
 1.8.20
 ------
