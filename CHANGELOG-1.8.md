@@ -4,6 +4,13 @@ Changes into Jelix 1.8
 Next
 ----
 
+
+1.8.21
+------
+
+- Fix security issue with PHP session: session id must be changed after authentication
+  to avoid session fixation attacks
+
 1.8.20
 ------
 

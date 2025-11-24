@@ -539,6 +539,9 @@ class jAuth
             }
         }
 
+        // to avoid "Session fixation" attacks, we regenerate the session id.
+        session_regenerate_id();
+
         if ($user = $dr->verifyPassword($login, $password)) {
             // the given login may be another property like email, so get the real login
             $login = $user->login;
@@ -596,6 +599,9 @@ class jAuth
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
             session_destroy();
+        }
+        else {
+            session_regenerate_id();
         }
 
         if (isset($config['persistant_enable']) && $config['persistant_enable']) {
