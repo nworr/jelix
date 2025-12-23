@@ -5,7 +5,8 @@ Next
 ----
 
 - fix regeneration of session id: support of unstable network and keep session data during login
-
+- fix jforms: form cache must not rely on session id, else forms could not be retrieved from cache
+  after a regeneration of session id.
 
 1.8.21
 ------
