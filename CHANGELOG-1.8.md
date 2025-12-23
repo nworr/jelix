@@ -4,6 +4,8 @@ Changes into Jelix 1.8
 Next
 ----
 
+- fix regeneration of session id: support of unstable network and keep session data during login
+
 
 1.8.21
 ------

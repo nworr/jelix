@@ -541,7 +541,7 @@ class jAuth
 
         // to avoid "Session fixation" attacks, we regenerate the session id.
         if (session_status() == \PHP_SESSION_ACTIVE) {
-            session_regenerate_id();
+            jSession::regenerateId(true);
         }
 
         if ($user = $dr->verifyPassword($login, $password)) {
@@ -603,7 +603,7 @@ class jAuth
             session_destroy();
         }
         else if (session_status() == \PHP_SESSION_ACTIVE) {
-            session_regenerate_id();
+            jSession::regenerateId(false);
         }
 
         if (isset($config['persistant_enable']) && $config['persistant_enable']) {
